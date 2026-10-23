@@ -14,6 +14,8 @@ def spin() -> int:
     return random.randint(0, 36)
 
 def color_of(pocket: int) -> Color:
+    if not 0 <= pocket <= 36:
+        raise ValueError("Pocket must be between 0 and 36")
     if pocket == 0:
         return Color.GREEN
     return Color.RED if pocket in RED_NUMBERS else Color.BLACK
@@ -39,8 +41,6 @@ def play_round(bet_type: Color, bet: int, balance: int, pocket: int | None = Non
         raise ValueError(error)
     if pocket is None:
         pocket = spin()
-    elif not 0 <= pocket <= 36:
-        raise ValueError("Pocket must be between 0 and 36")
 
     payout = calculate_payout(bet_type, bet, pocket)
 
