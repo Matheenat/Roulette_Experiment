@@ -1,9 +1,9 @@
 import random
 from enum import Enum
+from config import START_BALANCE
 
 # Const
 RED_NUMBERS = {1,3,5,7,9,12,14,16,18,19,21,23,25,27,30,32,34,36}
-START_BALANCE = 1000
 
 class Color(str, Enum):
     RED = "red"

@@ -1,0 +1,12 @@
+<section data-stage="post" hidden>
+  <h2>One last question</h2>
+  <fieldset>
+    <legend>Now that you have played: {{ odds_question }}</legend>
+    {% for opt in odds_options %}
+    <label class="option">
+      <input type="radio" name="odds_after" value="{{ opt }}"> {{ opt }}
+    </label>
+    {% endfor %}
+  </fieldset>
+  <button id="finish-btn" class="primary" disabled>See the results</button>
+</section>

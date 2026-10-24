@@ -1,0 +1,12 @@
+<section data-stage="pre" hidden>
+  <h2>Before you play</h2>
+  <fieldset>
+    <legend>{{ odds_question }}</legend>
+    {% for opt in odds_options %}
+    <label class="option">
+      <input type="radio" name="odds_before" value="{{ opt }}"> {{ opt }}
+    </label>
+    {% endfor %}
+  </fieldset>
+  <button id="start-btn" class="primary" disabled>Start playing</button>
+</section>
