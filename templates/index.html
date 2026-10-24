@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Roulette Experiment</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='game.css') }}">
+</head>
+<body>
+<main>
+  <noscript>This study needs JavaScript. Please turn it on and reload.</noscript>
+  {% include "screens/consent.html" %}
+  {% include "screens/pre.html" %}
+  {% include "screens/game.html" %}
+  {% include "screens/post.html" %}
+  {% include "screens/reveal.html" %}
+</main>
+<script type="module" src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

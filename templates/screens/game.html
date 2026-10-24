@@ -1,0 +1,53 @@
+<section data-stage="game" hidden>
+  <div class="wheel-wrap">
+    <div class="pointer" aria-hidden="true"></div>
+    <svg id="wheel" viewBox="-110 -110 220 220" role="img"
+         aria-label="Roulette wheel"></svg>
+  </div>
+
+  <div id="banner" class="banner" hidden></div>
+
+  <div class="stats">
+    <div><span class="label">Balance</span><strong id="balance">{{ start_balance }}</strong></div>
+    <div><span class="label">Current bet</span><strong id="current-bet">0</strong></div>
+  </div>
+
+  <div id="betting-controls">
+  <div class="row chips">
+    {% for c in chips %}
+    <button type="button" class="chip" data-amount="{{ c }}">+{{ c }}</button>
+    {% endfor %}
+    <button type="button" id="all-in">All in</button>
+    <button type="button" id="clear-bet">Clear</button>
+  </div>
+
+  <div class="row colors" role="group" aria-label="Bet on">
+    <button type="button" class="color-btn red" data-color="red" aria-pressed="false">Red</button>
+    <button type="button" class="color-btn black" data-color="black" aria-pressed="false">Black</button>
+    <button type="button" class="color-btn green" data-color="green" aria-pressed="false">Green</button>
+  </div>
+
+  <div class="row">
+    <button type="button" id="spin-btn" class="primary" disabled>Spin</button>
+    <button type="button" id="stop-btn" disabled>Stop playing</button>
+  </div>
+  </div>
+
+  <div id="gameover" hidden>
+    <p><strong>You have no money left.</strong></p>
+    <button type="button" id="next-btn" class="primary">Next</button>
+  </div>
+  <p id="error-msg" class="error" hidden></p>
+
+  <label class="check">
+    <input type="checkbox" id="history-toggle"> Show round history
+  </label>
+  <div id="history-wrap" class="table-wrap" hidden>
+    <table>
+      <thead>
+        <tr><th>#</th><th>Bet on</th><th>Bet</th><th>Result</th><th>Payout</th><th>Balance</th></tr>
+      </thead>
+      <tbody id="history-body"></tbody>
+    </table>
+  </div>
+</section>

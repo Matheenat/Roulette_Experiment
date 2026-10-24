@@ -1,8 +1,8 @@
 import pytest
 import random
+from config import START_BALANCE
 
 from game import (
-    START_BALANCE,
     Color,
     RED_NUMBERS,
     spin,
