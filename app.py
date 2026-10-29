@@ -156,7 +156,7 @@ def finish():
 @app.post("/api/history-view")
 def history_view():
     s = current_session()
-    if not s or s["stage"] != "game":
+    if not s or s["stage"] not in ("game", "post"):
         return error("No game in progress.", 409)
     storage.add_history_view(s["session_id"])
     return jsonify({"ok": True})
