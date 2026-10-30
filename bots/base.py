@@ -16,14 +16,14 @@ class Bot:
         return {"max_rounds" : self.max_rounds}
 
     def next_bet(self, history, current_balance):
-        raise NotImplementedError("Missing next_bot impl (bot Class)")
+        raise NotImplementedError("Missing next_bet impl (bot Class)")
 
     def decision_seconds(self, history) -> float:
         return self.rng.lognormvariate(1.0, 0.5)
 
     @staticmethod
-    def to_valid_bet(amount, balance):
-        amount = max(BET_UNIT, round(amount / BET_UNIT) * 10)
+    def to_valid_bet(amount, balance) -> int:
+        amount = max(BET_UNIT, round(amount / BET_UNIT) * BET_UNIT)
         return min(amount, balance)
 
     def play_session(self): 
