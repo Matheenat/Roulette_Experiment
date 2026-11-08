@@ -16,7 +16,7 @@ class Bot(ABC):
                 }
 
     @abstractmethod
-    def bet(self, history: dict, balace: int, rng: float):
+    def bet(self, history: dict, balance: int, rng: float):
         pass
 
     @staticmethod
