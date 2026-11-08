@@ -1,6 +1,6 @@
 from base import Bot
 from game import Color
-from config import BET_CHIPS, START_BALANCE
+from config import BET_CHIPS
 
 class LossChaser(Bot):
     name = "loss_chaser"
